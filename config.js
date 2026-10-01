@@ -1,6 +1,6 @@
 window.SITE_CONFIG = {
-  groupName: "Immersive Technology Accessibility Working Group",
+  groupName: "Innovate UK Immersive Tech Accessibility Working Group",
   contactEmail: "",
   githubRepoUrl: "",
-  mainSiteUrl: ""
+  mainSiteUrl: "https://iuk.immersivetechnetwork.org/working-groups/accessibility/"
 };
