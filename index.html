@@ -169,7 +169,11 @@
         <p id="demo"></p>
        <script>
        const date = new Date(document.lastModified);
-       document.getElementById("demo").innerHTML = date;
+       document.getElementById("demo").textContent =
+       date.toLocaleDateString("en-GB", {
+       month: "long",
+       year: "numeric"
+       });
        </script>
         
       </strong></p>
