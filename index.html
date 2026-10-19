@@ -9,11 +9,11 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
-  
+
   <header class="site-header">
     <div class="container header-inner">
       <div>
-        <p class="eyebrow">Innovate UK Immersive Tech Network - Accessibility Working Group</p>
+        <p class="eyebrow">Accessibility Working Group</p>
         <h1>Immersive Technology Accessibility Resources</h1>
         <p class="intro">Practical guidance, standards, tools and evidence for designing, developing and evaluating accessible immersive technologies.</p>
       </div>
@@ -66,6 +66,7 @@
             <h2 id="resources-title">Explore the resource library</h2>
             <p class="section-lead">Search by keyword or combine filters. All filtering happens locally in your browser.</p>
           </div>
+          <p class="reviewed">Resource collection reviewed Oct 2026</p>
         </div>
 
         <form class="filters" id="filters" role="search" aria-label="Filter accessibility resources">
@@ -81,9 +82,6 @@
             </select>
           </div>
 
-
-
-          
           <div class="field">
             <label for="technology">Technology</label>
             <select id="technology" name="technology">
@@ -143,28 +141,28 @@
       <div class="container narrow">
         <h2 id="about-title">About this resource hub</h2>
         <p>This collection is intended as a practical starting point for people creating, evaluating, researching or commissioning immersive technologies. It brings together external guidance, standards work, developer resources, tools and evidence relevant to accessibility in virtual, augmented and mixed reality.</p>
-  
+        <p>Inclusion in the library does not imply endorsement by the working group. Resources should be reviewed in context and alongside direct involvement of disabled people.</p>
       </div>
     </section>
 
     <section class="suggest-section" id="suggest" aria-labelledby="suggest-title">
       <div class="container narrow">
         <h2 id="suggest-title">Suggest a resource</h2>
-        <p>Know of a useful resource that should be included?</p>
+        <p>Know of a useful resource that should be included? This starter site supports two simple contribution routes.</p>
 
         <div class="suggest-grid">
           <div class="suggest-card">
             <h3>GitHub contribution</h3>
-            <p>Repository URL needed</p>
+            <p>If a repository URL is configured, contributors can open an issue using the link below.</p>
             <a id="github-suggest-link" class="primary-button link-button" href="#" hidden>Suggest via GitHub</a>
-            <p id="github-not-configured" class="muted">Need to add the repository URL in <code>config.js</code> to enable this button</p>
+            <p id="github-not-configured" class="muted">Add your repository URL in <code>config.js</code> to enable this button.</p>
           </div>
 
           <div class="suggest-card">
             <h3>Email suggestion</h3>
-            <p>A contact email is needed, then the button will open a pre-addressed message containing the information needed to review the resource.</p>
+            <p>If a contact email is configured, the button will open a pre-addressed message containing the information needed to review the resource.</p>
             <a id="email-suggest-link" class="secondary-button link-button" href="#" hidden>Suggest by email</a>
-            <p id="email-not-configured" class="muted">Need to add a contact email in <code>config.js</code> to enable this button</p>
+            <p id="email-not-configured" class="muted">Add a contact email in <code>config.js</code> to enable this button.</p>
           </div>
         </div>
       </div>
@@ -174,22 +172,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <p><strong>Immersive Technology Accessibility Resources</strong></p>
-      <p><strong>
-
-        <p>Last modified: <span id="last-modified"></span></p>
-        
-       <script>
-       const date = new Date(document.lastModified);
-       document.getElementById("last-modified").textContent =
-         
-       date.toLocaleDateString("en-GB", {
-       month: "long",
-       year: "numeric"
-       });
-       </script>
-        
-      </strong></p>
-    
+      <p>Built as a lightweight static site for GitHub Pages. No tracking, cookies or external JavaScript libraries.</p>
     </div>
   </footer>
 
