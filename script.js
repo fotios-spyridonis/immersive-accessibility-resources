@@ -7,6 +7,7 @@
   const els = {
     form: document.getElementById("filters"),
     search: document.getElementById("search"),
+    category: document.getElementById("category"),
     technology: document.getElementById("technology"),
     accessibility: document.getElementById("accessibility"),
     type: document.getElementById("type"),
@@ -38,6 +39,12 @@
     });
   };
 
+  addOptions(
+  els.category,
+  [...new Set(resources.map(item => item.category).filter(Boolean))]
+    .sort((a, b) => a.localeCompare(b))
+);
+  
   addOptions(els.technology, uniqueSorted("technology"));
   addOptions(els.accessibility, uniqueSorted("accessibility"));
   addOptions(els.type, uniqueSorted("type"));
@@ -61,6 +68,7 @@
       item.title,
       item.description,
       item.organisation,
+      item.category,
       ...(item.type || []),
       ...(item.technology || []),
       ...(item.accessibility || []),
@@ -73,6 +81,7 @@
     const q = normalize(els.search.value);
     return resources.filter(item =>
       matchesSearch(item, q) &&
+      (!els.category.value || item.category === els.category.value) &&
       matchesArray(item, "technology", els.technology.value) &&
       matchesArray(item, "accessibility", els.accessibility.value) &&
       matchesArray(item, "type", els.type.value) &&
@@ -107,7 +116,8 @@
 
     els.grid.innerHTML = items.map(item => {
       const badges = [
-        ...(item.type || []).slice(0, 2),
+        ...(item.category ? [item.category] : []),
+        ...(item.type || []).slice(0, 1),
         ...(item.technology || []).slice(0, 2)
       ].map(badge).join("");
 
@@ -157,6 +167,7 @@
 
       const preset = presets[pathway];
       if (preset?.audience) els.audience.value = preset.audience;
+      updateUrl();
       render();
       document.getElementById("resources").scrollIntoView({ behavior: "smooth", block: "start" });
       els.search.focus({ preventScroll: true });
@@ -178,5 +189,70 @@
     els.emailMissing.hidden = true;
   }
 
-  render();
+  const applyUrlFilters = () => {
+  const params = new URLSearchParams(window.location.search);
+
+  const setIfValid = (el, key) => {
+    const value = params.get(key);
+
+    if (
+      value &&
+      [...el.options].some(option => option.value === value)
+    ) {
+      el.value = value;
+    }
+  };
+
+  setIfValid(els.category, "category");
+  setIfValid(els.technology, "technology");
+  setIfValid(els.accessibility, "accessibility");
+  setIfValid(els.type, "type");
+  setIfValid(els.audience, "audience");
+
+  const query = params.get("q");
+
+  if (query) {
+    els.search.value = query;
+  }
+};
+
+const updateUrl = () => {
+  const params = new URLSearchParams();
+
+  if (els.search.value.trim()) {
+    params.set("q", els.search.value.trim());
+  }
+
+  if (els.category.value) {
+    params.set("category", els.category.value);
+  }
+
+  if (els.technology.value) {
+    params.set("technology", els.technology.value);
+  }
+
+  if (els.accessibility.value) {
+    params.set("accessibility", els.accessibility.value);
+  }
+
+  if (els.type.value) {
+    params.set("type", els.type.value);
+  }
+
+  if (els.audience.value) {
+    params.set("audience", els.audience.value);
+  }
+
+  const nextUrl = params.toString()
+    ? `${window.location.pathname}?${params.toString()}`
+    : window.location.pathname;
+
+  window.history.replaceState({}, "", nextUrl);
+};
+
+els.form.addEventListener("input", updateUrl);
+els.form.addEventListener("change", updateUrl);
+
+applyUrlFilters();
+render();
 })();
