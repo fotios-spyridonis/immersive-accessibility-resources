@@ -409,10 +409,7 @@ window.RESOURCES = [
       "evaluate"
     ],
     "featured": false
-  }
-
-
-
+  },
    {
   "id": "nsdf-access-toolkit",
   "title": "NSDF Access Toolkit",
@@ -724,9 +721,7 @@ window.RESOURCES = [
     "evaluate"
   ],
   "featured": true
-}
-
-
+},
 {
   "id": "microsoft-inclusive-design",
   "title": "Microsoft Inclusive Design",
