@@ -6,6 +6,7 @@ window.RESOURCES = [
     "url": "https://www.w3.org/TR/xaur/",
     "organisation": "W3C",
     "year": 2021,
+    "category": "XR-specific",
     "type": [
       "Guidance",
       "Standards work"
@@ -43,6 +44,7 @@ window.RESOURCES = [
     "url": "https://metaverse-standards.org/domain-groups/accessibility-in-the-metaverse/",
     "organisation": "Metaverse Standards Forum",
     "year": 2026,
+    "category": "XR-specific",
     "type": [
       "Guidance",
       "Standards work",
@@ -83,6 +85,7 @@ window.RESOURCES = [
     "url": "https://xra.org/research/xra-developers-guide-accessibility-and-inclusive-design/",
     "organisation": "XR Association",
     "year": 2020,
+    "category": "XR-specific",
     "type": [
       "Guidance"
     ],
@@ -116,6 +119,7 @@ window.RESOURCES = [
     "url": "https://xraccess.org/resources/",
     "organisation": "XR Access",
     "year": 2025,
+    "category": "XR-specific",
     "type": [
       "Resource collection",
       "Research",
@@ -154,6 +158,7 @@ window.RESOURCES = [
     "url": "https://xraccessibility.github.io/",
     "organisation": "XR Access / XR Association",
     "year": 2025,
+    "category": "Toolkits and development",
     "type": [
       "Tools",
       "Developer resource",
@@ -191,6 +196,7 @@ window.RESOURCES = [
     "url": "https://github.com/immersive-web/webxr-accessibility",
     "organisation": "Immersive Web Community",
     "year": 2026,
+    "category": "Toolkits and development",
     "type": [
       "Standards work",
       "Developer resource"
@@ -220,6 +226,7 @@ window.RESOURCES = [
     "url": "https://www.ablegamers.org/apx/",
     "organisation": "AbleGamers",
     "year": 2026,
+    "category": "Design frameworks",
     "type": [
       "Guidance",
       "Training"
@@ -252,6 +259,7 @@ window.RESOURCES = [
     "url": "https://gameaccessibilityguidelines.com/",
     "organisation": "Game Accessibility Guidelines",
     "year": 2026,
+    "category": "XR-specific",
     "type": [
       "Guidance",
       "Checklist"
@@ -284,6 +292,7 @@ window.RESOURCES = [
     "description": "Detailed best-practice guidance covering text, contrast, captions, audio, input, haptics, navigation, motion, photosensitivity, communication and other accessibility areas.",
     "url": "https://learn.microsoft.com/en-us/xbox/accessibility/guidelines",
     "organisation": "Microsoft",
+    "category": "Design frameworks",
     "year": 2023,
     "type": [
       "Guidance",
@@ -319,6 +328,7 @@ window.RESOURCES = [
     "url": "https://docs.unity.com/en-us/engine/6000.3/manual/accessibility/module-intro",
     "organisation": "Unity",
     "year": 2026,
+    "category": "Toolkits and development",
     "type": [
       "Developer resource",
       "Tools"
@@ -345,6 +355,7 @@ window.RESOURCES = [
     "url": "https://github.com/Unity-Technologies/a11y-public-sample",
     "organisation": "Unity",
     "year": 2026,
+    "category": "Toolkits and development",
     "type": [
       "Developer resource",
       "Example",
@@ -372,6 +383,7 @@ window.RESOURCES = [
     "url": "https://metaverse-standards.org/news/good-intentions-real-barriers-investigating-accessibility-in-xr-workflows/",
     "organisation": "Metaverse Standards Forum",
     "year": 2025,
+    "category": "Academic research",
     "type": [
       "Research",
       "Report"
