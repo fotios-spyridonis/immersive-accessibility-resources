@@ -1736,5 +1736,34 @@ window.RESOURCES = [
       "develop"
     ],
     "featured": false
+  },
+  {
+    "id": "sus-presence-questionnaire",
+    "title": "Slater–Usoh–Steed (SUS) Presence Questionnaire",
+    "description": "A short presence questionnaire used in immersive-environment research to assess the subjective sense of being present in a virtual environment.",
+    "url": "https://doi.org/10.1162/105474600566989",
+    "organisation": "Usoh et al.",
+    "year": 2000,
+    "category": "Evaluation methods and metrics",
+    "type": [
+      "Measure",
+      "Questionnaire"
+    ],
+    "technology": [
+      "VR",
+      "XR"
+    ],
+    "accessibility": [
+      "General"
+    ],
+    "audience": [
+      "Researchers",
+      "Evaluators"
+    ],
+    "pathways": [
+      "evaluate",
+      "research"
+    ],
+    "featured": false
   }
 ];
