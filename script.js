@@ -39,12 +39,7 @@
     });
   };
 
-  addOptions(
-  els.category,
-  [...new Set(resources.map(item => item.category).filter(Boolean))]
-    .sort((a, b) => a.localeCompare(b))
-);
-  
+  addOptions(els.category, [...new Set(resources.map(item => item.category).filter(Boolean))].sort((a, b) => a.localeCompare(b)));
   addOptions(els.technology, uniqueSorted("technology"));
   addOptions(els.accessibility, uniqueSorted("accessibility"));
   addOptions(els.type, uniqueSorted("type"));
@@ -167,7 +162,6 @@
 
       const preset = presets[pathway];
       if (preset?.audience) els.audience.value = preset.audience;
-      updateUrl();
       render();
       document.getElementById("resources").scrollIntoView({ behavior: "smooth", block: "start" });
       els.search.focus({ preventScroll: true });
@@ -190,69 +184,37 @@
   }
 
   const applyUrlFilters = () => {
-  const params = new URLSearchParams(window.location.search);
-
-  const setIfValid = (el, key) => {
-    const value = params.get(key);
-
-    if (
-      value &&
-      [...el.options].some(option => option.value === value)
-    ) {
-      el.value = value;
-    }
+    const params = new URLSearchParams(window.location.search);
+    const setIfValid = (el, key) => {
+      const value = params.get(key);
+      if (value && [...el.options].some(option => option.value === value)) el.value = value;
+    };
+    setIfValid(els.category, "category");
+    setIfValid(els.technology, "technology");
+    setIfValid(els.accessibility, "accessibility");
+    setIfValid(els.type, "type");
+    setIfValid(els.audience, "audience");
+    const query = params.get("q");
+    if (query) els.search.value = query;
+    const pathway = params.get("pathway");
+    const pathwayAudience = {design:"Designers",develop:"Developers",evaluate:"Evaluators",research:"Researchers"}[pathway];
+    if (pathwayAudience && [...els.audience.options].some(o => o.value === pathwayAudience)) els.audience.value = pathwayAudience;
   };
 
-  setIfValid(els.category, "category");
-  setIfValid(els.technology, "technology");
-  setIfValid(els.accessibility, "accessibility");
-  setIfValid(els.type, "type");
-  setIfValid(els.audience, "audience");
+  const updateUrl = () => {
+    const params = new URLSearchParams();
+    if (els.search.value.trim()) params.set("q", els.search.value.trim());
+    if (els.category.value) params.set("category", els.category.value);
+    if (els.technology.value) params.set("technology", els.technology.value);
+    if (els.accessibility.value) params.set("accessibility", els.accessibility.value);
+    if (els.type.value) params.set("type", els.type.value);
+    if (els.audience.value) params.set("audience", els.audience.value);
+    const next = params.toString() ? `${window.location.pathname}?${params}` : window.location.pathname;
+    window.history.replaceState({}, "", next);
+  };
 
-  const query = params.get("q");
-
-  if (query) {
-    els.search.value = query;
-  }
-};
-
-const updateUrl = () => {
-  const params = new URLSearchParams();
-
-  if (els.search.value.trim()) {
-    params.set("q", els.search.value.trim());
-  }
-
-  if (els.category.value) {
-    params.set("category", els.category.value);
-  }
-
-  if (els.technology.value) {
-    params.set("technology", els.technology.value);
-  }
-
-  if (els.accessibility.value) {
-    params.set("accessibility", els.accessibility.value);
-  }
-
-  if (els.type.value) {
-    params.set("type", els.type.value);
-  }
-
-  if (els.audience.value) {
-    params.set("audience", els.audience.value);
-  }
-
-  const nextUrl = params.toString()
-    ? `${window.location.pathname}?${params.toString()}`
-    : window.location.pathname;
-
-  window.history.replaceState({}, "", nextUrl);
-};
-
-els.form.addEventListener("input", updateUrl);
-els.form.addEventListener("change", updateUrl);
-
-applyUrlFilters();
-render();
+  els.form.addEventListener("input", updateUrl);
+  els.form.addEventListener("change", updateUrl);
+  applyUrlFilters();
+  render();
 })();
