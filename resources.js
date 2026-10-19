@@ -727,6 +727,91 @@ window.RESOURCES = [
 }
 
 
+{
+  "id": "microsoft-inclusive-design",
+  "title": "Microsoft Inclusive Design",
+  "description": "Inclusive design principles, methods and tools centred on designing with and for human diversity.",
+  "url": "https://inclusive.microsoft.design/",
+  "organisation": "Microsoft",
+  "year": null,
+  "category": "Design frameworks",
+  "type": [
+    "Framework",
+    "Guidance"
+  ],
+  "technology": [
+    "General"
+  ],
+  "accessibility": [
+    "General"
+  ],
+  "audience": [
+    "Designers",
+    "Developers",
+    "Researchers"
+  ],
+  "pathways": [
+    "design"
+  ],
+  "featured": true
+},
+{
+  "id": "ability-based-design",
+  "title": "Ability-Based Design",
+  "description": "A human-centred design framework that focuses on users’ abilities and adapts systems around what people can do.",
+  "url": "https://dl.acm.org/doi/abs/10.1145/1952383.1952384",
+  "organisation": "ACM / Wobbrock et al.",
+  "year": 2011,
+  "category": "Design frameworks",
+  "type": [
+    "Framework",
+    "Research"
+  ],
+  "technology": [
+    "General"
+  ],
+  "accessibility": [
+    "General"
+  ],
+  "audience": [
+    "Designers",
+    "Researchers"
+  ],
+  "pathways": [
+    "design",
+    "research"
+  ],
+  "featured": false
+},
+{
+  "id": "universal-design-principles",
+  "title": "The 7 Principles of Universal Design",
+  "description": "Foundational principles for designing environments, products and services usable by the widest possible range of people.",
+  "url": "https://universaldesign.ie/about-universal-design/the-7-principles",
+  "organisation": "Centre for Excellence in Universal Design",
+  "year": null,
+  "category": "Design frameworks",
+  "type": [
+    "Framework",
+    "Guidance"
+  ],
+  "technology": [
+    "General"
+  ],
+  "accessibility": [
+    "General"
+  ],
+  "audience": [
+    "Designers",
+    "Researchers",
+    "Organisations"
+  ],
+  "pathways": [
+    "design"
+  ],
+  "featured": false
+}
+
 
 
 
