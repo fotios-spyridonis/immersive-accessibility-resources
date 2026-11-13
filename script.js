@@ -8,9 +8,9 @@
     form: document.getElementById("filters"),
     search: document.getElementById("search"),
     category: document.getElementById("category"),
-    technology: document.getElementById("technology"),
+    /*technology: document.getElementById("technology"), */
     accessibility: document.getElementById("accessibility"),
-    type: document.getElementById("type"),
+   /* type: document.getElementById("type"),*/
     audience: document.getElementById("audience"),
     sort: document.getElementById("sort"),
     grid: document.getElementById("resource-grid"),
@@ -40,9 +40,9 @@
   };
 
   addOptions(els.category, [...new Set(resources.map(item => item.category).filter(Boolean))].sort((a, b) => a.localeCompare(b)));
-  addOptions(els.technology, uniqueSorted("technology"));
+  /*addOptions(els.technology, uniqueSorted("technology"));*/
   addOptions(els.accessibility, uniqueSorted("accessibility"));
-  addOptions(els.type, uniqueSorted("type"));
+  /*addOptions(els.type, uniqueSorted("type"));*/
   addOptions(els.audience, uniqueSorted("audience"));
 
   const escapeHtml = (value) => String(value ?? "")
@@ -77,9 +77,9 @@
     return resources.filter(item =>
       matchesSearch(item, q) &&
       (!els.category.value || item.category === els.category.value) &&
-      matchesArray(item, "technology", els.technology.value) &&
+     /* matchesArray(item, "technology", els.technology.value) &&*/
       matchesArray(item, "accessibility", els.accessibility.value) &&
-      matchesArray(item, "type", els.type.value) &&
+     /* matchesArray(item, "type", els.type.value) &&*/
       matchesArray(item, "audience", els.audience.value)
     );
   };
@@ -190,9 +190,9 @@
       if (value && [...el.options].some(option => option.value === value)) el.value = value;
     };
     setIfValid(els.category, "category");
-    setIfValid(els.technology, "technology");
+    /*setIfValid(els.technology, "technology");*/
     setIfValid(els.accessibility, "accessibility");
-    setIfValid(els.type, "type");
+    /*setIfValid(els.type, "type");*/
     setIfValid(els.audience, "audience");
     const query = params.get("q");
     if (query) els.search.value = query;
@@ -205,9 +205,9 @@
     const params = new URLSearchParams();
     if (els.search.value.trim()) params.set("q", els.search.value.trim());
     if (els.category.value) params.set("category", els.category.value);
-    if (els.technology.value) params.set("technology", els.technology.value);
+   /* if (els.technology.value) params.set("technology", els.technology.value);*/
     if (els.accessibility.value) params.set("accessibility", els.accessibility.value);
-    if (els.type.value) params.set("type", els.type.value);
+    /*if (els.type.value) params.set("type", els.type.value);*/
     if (els.audience.value) params.set("audience", els.audience.value);
     const next = params.toString() ? `${window.location.pathname}?${params}` : window.location.pathname;
     window.history.replaceState({}, "", next);
